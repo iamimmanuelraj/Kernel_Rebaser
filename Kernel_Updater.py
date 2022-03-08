@@ -63,4 +63,4 @@ os.system("git commit -m 'config: defconfig: update LOCALVERSION to latest caf t
 
 # Push Changes to Repo
 os.system("git remote add upstream  %s"%(REPO_LINK))
-os.system("git push upstream HEAD:refs/heads/%s"%(KERNEL_TAG))
+os.system("git push upstream HEAD:refs/heads/%s -f"%(KERNEL_TAG))
