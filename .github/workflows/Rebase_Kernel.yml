@@ -29,5 +29,5 @@ jobs:
         timeout-minutes: 340
         continue-on-error: true
         run: |
-          wget https://raw.githubusercontent.com/iamimmanuelraj/Kernel_Rebaser/main/Kernel_Updater.py
+          wget https://raw.githubusercontent.com/${GitHubName}/Kernel_Rebaser/main/Kernel_Updater.py
           python3 Kernel_Updater.py
