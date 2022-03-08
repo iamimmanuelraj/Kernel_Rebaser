@@ -41,7 +41,7 @@ os.system("git fetch %s master"%(EXFAT_LINK))
 os.system("git subtree add --prefix=fs/exfat %s master --squash"%(EXFAT_LINK))
 
 # Fetch the changes from old kernel and cherry pick em
-os.system("git fetch %s -b %s"%(REPO_LINK,BASE_BRANCH))
+os.system("git fetch %s %s"%(REPO_LINK,BASE_BRANCH))
 os.system("git cherry-pick 57cc5c1209255fc5c6350a3cd3d36f8ee3730fd7^..0ca35dc53901d3ca4005d3d788ff6b9d714bd4d1")
 
 # Change Localversion in defconfig (Add defconfig paths for your devices)
