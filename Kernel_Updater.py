@@ -20,6 +20,9 @@ os.system("git clone https://source.codeaurora.org/quic/la/kernel/msm-%s -b %s %
 # Go into the folder
 os.chdir("%s"%(KERNEL_TAG))
 
+# Checkout to a TEMP branch
+os.system("git checkout -b TEMP")
+
 # Add QCACLD
 os.system("git fetch %s %s"%(QCACLD_LINK,KERNEL_TAG))
 os.system("git subtree add --prefix=drivers/staging/qcacld-3.0 %s %s --squash"%(QCACLD_LINK,KERNEL_TAG))
