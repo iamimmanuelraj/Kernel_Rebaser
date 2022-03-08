@@ -62,7 +62,7 @@ DEFCONFIG.writelines(NUMBER_OF_LINES)
 DEFCONFIG.close()
 
 # Commit Localversion Changes
-os.system("git commit -m 'config: defconfig: update LOCALVERSION to latest caf tag/version' -m 'Rebased over Latest tag so lets update this too'")
+os.system("git add . && git commit -m 'config: defconfig: update LOCALVERSION to latest caf tag/version' -m 'Rebased over Latest tag so lets update this too'")
 
 # Push Changes to Repo
 os.system("git remote add upstream  %s"%(REPO_LINK))
