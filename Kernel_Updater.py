@@ -1,11 +1,13 @@
 # Module Imports
 import os
 
-# Variables
+# Variables - Changable
 KERNEL_VERSION = "4.19" # Set Kernel Version (4.4/4.14/4.19)
 KERNEL_TAG = "LA.UM.10.2.1.r1-03400-sdm660.0" # Set CAF Tag / Upstream Version (LA.UM.10.2.1.r1-0300-sdm660.0/v4.19.157)
 REPO_LINK = "https://github.com/iamimmanuelraj/android_kernel_xiaomi_jasmine_sprout" # Repo link to pull/fetch/push Kernel
 BASE_BRANCH = "BASE" # Base branch to pick the old/device base changes from
+
+# Variables - Non_Changable
 QCACLD_LINK = "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qcacld-3.0" # Qcacld repo link
 FW_API_LINK = "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/fw-api" # Firmware Api repo link
 QCA_WIFI_HOST_CM_LINK = "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qca-wifi-host-cmn" # Qualcom Wifi host repo link
