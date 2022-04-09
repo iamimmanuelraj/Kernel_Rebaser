@@ -24,23 +24,18 @@ os.chdir("%s"%(KERNEL_TAG))
 os.system("git checkout -b TEMP")
 
 # Add QCACLD
-os.system("git fetch %s %s"%(QCACLD_LINK,KERNEL_TAG))
 os.system("git subtree add --prefix=drivers/staging/qcacld-3.0 %s %s --squash"%(QCACLD_LINK,KERNEL_TAG))
 
 # Add Firmware Api
-os.system("git fetch %s %s"%(FW_API_LINK,KERNEL_TAG))
 os.system("git subtree add --prefix=drivers/staging/fw-api %s %s --squash"%(FW_API_LINK,KERNEL_TAG))
 
 # Add Qualcom Wifi host
-os.system("git fetch %s %s"%(QCA_WIFI_HOST_CM_LINK,KERNEL_TAG))
 os.system("git subtree add --prefix=drivers/staging/qca-wifi-host-cmn %s %s --squash"%(QCA_WIFI_HOST_CM_LINK,KERNEL_TAG))
 
 # Add Audio Techpack
-os.system("git fetch %s %s"%(AUDIO_TECHPACK_LINK,KERNEL_TAG))
 os.system("git subtree add --prefix=techpack/audio %s %s --squash"%(AUDIO_TECHPACK_LINK,KERNEL_TAG))
 
 # Add Exfat
-os.system("git fetch %s master"%(EXFAT_LINK))
 os.system("git subtree add --prefix=fs/exfat %s master --squash"%(EXFAT_LINK))
 
 # Fetch the changes from old kernel and cherry pick em
