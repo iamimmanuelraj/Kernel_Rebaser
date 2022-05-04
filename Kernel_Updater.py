@@ -40,7 +40,7 @@ os.system("git subtree add --prefix=fs/exfat %s master --squash"%(EXFAT_LINK))
 
 # Fetch the changes from old kernel and cherry pick em
 os.system("git fetch %s %s"%(REPO_LINK,BASE_BRANCH))
-os.system("git cherry-pick 6113052fc218f0feb74258766d9ec102e9a2414a^..9ca97893c5e8d5cee6d6498309a8ae418bef60ce")
+os.system("git cherry-pick 6113052fc218f0feb74258766d9ec102e9a2414a^..3b90f51b0727990e22277dd6e307ce1dd58e0966")
 
 # Change Localversion in defconfig (Add defconfig paths for your devices)
 DEFCONFIG = open("arch/arm64/configs/vendor/jasmine_sprout_defconfig", "r")
