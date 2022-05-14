@@ -4,18 +4,18 @@ import os
 # Variables - Changable
 KERNEL_VERSION = "4.19" # Set Kernel Version (4.4/4.14/4.19)
 KERNEL_TAG = "LA.UM.10.2.1.r1-03400-sdm660.0" # Set CAF Tag / Upstream Version (LA.UM.10.2.1.r1-0300-sdm660.0/v4.19.157)
-REPO_LINK = "https://github.com/iamimmanuelraj/android_kernel_xiaomi_jasmine_sprout" # Repo link to pull/fetch/push Kernel
+REPO_LINK = "https://github.com/iamimmanuelraj/android_kernel_xiaomi_jasmine_sprout.git" # Repo link to pull/fetch/push Kernel
 BASE_BRANCH = "BASE_10_34" # Base branch to pick the old/device base changes from
 
 # Variables - Non_Changable
-QCACLD_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/qcom-opensource/wlan/qcacld-3.0" # Qcacld repo link
-FW_API_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/qcom-opensource/wlan/fw-api" # Firmware Api repo link
-QCA_WIFI_HOST_CM_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/qcom-opensource/wlan/qca-wifi-host-cmn" # Qualcom Wifi host repo link
-AUDIO_TECHPACK_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/opensource/audio-kernel" # Audio Techpack repo link
-EXFAT_LINK = "https://github.com/arter97/exfat-linux" # Exfat repo link
+QCACLD_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/qcom-opensource/wlan/qcacld-3.0.git" # Qcacld repo link
+FW_API_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/qcom-opensource/wlan/fw-api.git" # Firmware Api repo link
+QCA_WIFI_HOST_CM_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/qcom-opensource/wlan/qca-wifi-host-cmn.git" # Qualcom Wifi host repo link
+AUDIO_TECHPACK_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/opensource/audio-kernel.git" # Audio Techpack repo link
+EXFAT_LINK = "https://github.com/arter97/exfat-linux.git" # Exfat repo link
 
 # Clone the kernel
-os.system("git clone https://git.codelinaro.org/clo/la/kernel/msm-%s -b %s %s"%(KERNEL_VERSION,KERNEL_TAG,KERNEL_TAG))
+os.system("git clone https://git.codelinaro.org/clo/la/kernel/msm-%s.git -b %s %s"%(KERNEL_VERSION,KERNEL_TAG,KERNEL_TAG))
 
 # Go into the folder
 os.chdir("%s"%(KERNEL_TAG))
