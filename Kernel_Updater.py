@@ -5,13 +5,13 @@ import os
 KERNEL_VERSION = "4.19" # Set Kernel Version (4.4/4.14/4.19)
 KERNEL_TAG = "LA.UM.10.2.1.r1-03400-sdm660.0" # Set CAF Tag / Upstream Version (LA.UM.10.2.1.r1-0300-sdm660.0/v4.19.157)
 REPO_LINK = "https://github.com/iamimmanuelraj/android_kernel_xiaomi_jasmine_sprout.git" # Repo link to pull/fetch/push Kernel
-BASE_BRANCH = "BASE_10_34" # Base branch to pick the old/device base changes from
+BASE_BRANCH = "LA.UM.10.2.1.r1-03700-sdm660.0" # Base branch to pick the old/device base changes from
 
 # Variables - Non_Changable
-QCACLD_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/qcom-opensource/wlan/qcacld-3.0.git" # Qcacld repo link
-FW_API_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/qcom-opensource/wlan/fw-api.git" # Firmware Api repo link
-QCA_WIFI_HOST_CM_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/qcom-opensource/wlan/qca-wifi-host-cmn.git" # Qualcom Wifi host repo link
-AUDIO_TECHPACK_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/opensource/audio-kernel.git" # Audio Techpack repo link
+QCACLD_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/qcom-opensource/wlan/qcacld-3.0" # Qcacld repo link
+FW_API_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/qcom-opensource/wlan/fw-api" # Firmware Api repo link
+QCA_WIFI_HOST_CM_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/qcom-opensource/wlan/qca-wifi-host-cmn" # Qualcom Wifi host repo link
+AUDIO_TECHPACK_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/opensource/audio-kernel" # Audio Techpack repo link
 EXFAT_LINK = "https://github.com/arter97/exfat-linux.git" # Exfat repo link
 
 # Clone the kernel
@@ -40,7 +40,7 @@ os.system("git subtree add --prefix=fs/exfat %s master --squash"%(EXFAT_LINK))
 
 # Fetch the changes from old kernel and cherry pick em
 os.system("git fetch %s %s"%(REPO_LINK,BASE_BRANCH))
-os.system("git cherry-pick 731a1be19f507db3b948a4f114258cafd827cb64^..818c8cac0deb303ded644d3f911a6bbe0ca336b0")
+os.system("git cherry-pick c46747559bcc8abab8f1674aca4f5a6ddbc71aad^..58743c137cccac80b7ca4a104467d615a72c1f2f")
 
 # Change Localversion in defconfig (Add defconfig paths for your devices)
 DEFCONFIG = open("arch/arm64/configs/vendor/jasmine_sprout_defconfig", "r")
