@@ -8,14 +8,14 @@ REPO_LINK = "https://github.com/iamimmanuelraj/android_kernel_xiaomi_jasmine_spr
 BASE_BRANCH = "LA.UM.10.2.1.r1-03700-sdm660.0" # Base branch to pick the old/device base changes from
 
 # Variables - Non_Changable
-QCACLD_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/qcom-opensource/wlan/qcacld-3.0" # Qcacld repo link
-FW_API_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/qcom-opensource/wlan/fw-api" # Firmware Api repo link
-QCA_WIFI_HOST_CM_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/qcom-opensource/wlan/qca-wifi-host-cmn" # Qualcom Wifi host repo link
-AUDIO_TECHPACK_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/opensource/audio-kernel" # Audio Techpack repo link
+QCACLD_LINK = "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qcacld-3.0" # Qcacld repo link
+FW_API_LINK = "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/fw-api" # Firmware Api repo link
+QCA_WIFI_HOST_CM_LINK = "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qca-wifi-host-cmn" # Qualcom Wifi host repo link
+AUDIO_TECHPACK_LINK = "https://source.codeaurora.org/quic/la/platform/vendor/opensource/audio-kernel" # Audio Techpack repo link
 EXFAT_LINK = "https://github.com/arter97/exfat-linux" # Exfat repo link
 
 # Clone the kernel
-os.system("git clone https://git.codelinaro.org/clo/la/kernel/msm-%s -b %s %s"%(KERNEL_VERSION,KERNEL_TAG,KERNEL_TAG))
+os.system("git clone https://source.codeaurora.org/quic/la/kernel/msm-%s -b %s %s"%(KERNEL_VERSION,KERNEL_TAG,KERNEL_TAG))
 
 # Go into the folder
 os.chdir("%s"%(KERNEL_TAG))
