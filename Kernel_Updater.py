@@ -15,7 +15,7 @@ AUDIO_TECHPACK_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/opensou
 EXFAT_LINK = "https://github.com/arter97/exfat-linux" # Exfat repo link
 
 # Clone the kernel
-os.system("git clone https://source.codeaurora.org/quic/la/kernel/msm-%s -b %s %s"%(KERNEL_VERSION,KERNEL_TAG,KERNEL_TAG))
+os.system("git clone https://git.codelinaro.org/clo/la/kernel/msm-%s -b %s %s"%(KERNEL_VERSION,KERNEL_TAG,KERNEL_TAG))
 
 # Go into the folder
 os.chdir("%s"%(KERNEL_TAG))
