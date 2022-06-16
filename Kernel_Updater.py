@@ -3,15 +3,15 @@ import os
 
 # Variables - Changable
 KERNEL_VERSION = "4.19" # Set Kernel Version (4.4/4.14/4.19)
-KERNEL_TAG = "LA.UM.10.2.1.r1-03400-sdm660.0" # Set CAF Tag / Upstream Version (LA.UM.10.2.1.r1-0300-sdm660.0/v4.19.157)
+KERNEL_TAG = "LA.UM.10.2.1.r1-03800-sdm660.0" # Set CAF Tag / Upstream Version (LA.UM.10.2.1.r1-0300-sdm660.0/v4.19.157)
 REPO_LINK = "https://github.com/iamimmanuelraj/android_kernel_xiaomi_jasmine_sprout" # Repo link to pull/fetch/push Kernel
-BASE_BRANCH = "LA.UM.10.2.1.r1-03700-sdm660.0" # Base branch to pick the old/device base changes from
+BASE_BRANCH = "BASE_3700" # Base branch to pick the old/device base changes from
 
 # Variables - Non_Changable
-QCACLD_LINK = "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qcacld-3.0" # Qcacld repo link
-FW_API_LINK = "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/fw-api" # Firmware Api repo link
-QCA_WIFI_HOST_CM_LINK = "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qca-wifi-host-cmn" # Qualcom Wifi host repo link
-AUDIO_TECHPACK_LINK = "https://source.codeaurora.org/quic/la/platform/vendor/opensource/audio-kernel" # Audio Techpack repo link
+QCACLD_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/qcom-opensource/wlan/qcacld-3.0" # Qcacld repo link
+FW_API_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/qcom-opensource/wlan/fw-api" # Firmware Api repo link
+QCA_WIFI_HOST_CM_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/qcom-opensource/wlan/qca-wifi-host-cmn" # Qualcom Wifi host repo link
+AUDIO_TECHPACK_LINK = "https://git.codelinaro.org/clo/la/platform/vendor/opensource/audio-kernel" # Audio Techpack repo link
 EXFAT_LINK = "https://github.com/arter97/exfat-linux" # Exfat repo link
 
 # Clone the kernel
@@ -40,7 +40,7 @@ os.system("git subtree add --prefix=fs/exfat %s master --squash"%(EXFAT_LINK))
 
 # Fetch the changes from old kernel and cherry pick em
 os.system("git fetch %s %s"%(REPO_LINK,BASE_BRANCH))
-os.system("git cherry-pick c46747559bcc8abab8f1674aca4f5a6ddbc71aad^..58743c137cccac80b7ca4a104467d615a72c1f2f")
+os.system("git cherry-pick 99fe732f5ba079d53fab3dc19c756ae843a54f98^..7e53c259a9f6a21fb3ba78c2c9759ecd80603aef")
 
 # Change Localversion in defconfig (Add defconfig paths for your devices)
 DEFCONFIG = open("arch/arm64/configs/vendor/jasmine_sprout_defconfig", "r")
